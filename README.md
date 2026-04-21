@@ -84,7 +84,7 @@ cd server
 npm install
 ```
 
-Create a `.env` file in `server/` using `.env.example`.
+Create a `.env` file in `server/` 
 
 Start the server:
 
