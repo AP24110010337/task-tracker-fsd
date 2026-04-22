@@ -148,7 +148,7 @@ const LandingPage = () => {
               Manage tasks and track your work with a simple system.
             </h1>
             <p className="mt-6 max-w-2xl text-xl leading-8 text-slate-600">
-              Task Track helps users create tasks, record time spent on them, update task
+              Task Track helps you to create tasks, record time spent on them, update task
               status, and monitor progress through a clean dashboard.
             </p>
 
