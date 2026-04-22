@@ -266,7 +266,7 @@ const LandingPage = () => {
                 System Flow
               </p>
               <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
-                How the user moves through the app
+                How you moves through the app
               </h2>
             </div>
 
