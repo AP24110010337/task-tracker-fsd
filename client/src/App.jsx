@@ -4,6 +4,7 @@ import AppLayout from "./components/AppLayout.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import PublicRoute from "./components/PublicRoute.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
+import LandingPage from "./pages/LandingPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
 import TasksPage from "./pages/TasksPage.jsx";
@@ -11,7 +12,7 @@ import TasksPage from "./pages/TasksPage.jsx";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/" element={<LandingPage />} />
 
       <Route
         path="/signup"
@@ -43,4 +44,3 @@ const App = () => {
 };
 
 export default App;
-

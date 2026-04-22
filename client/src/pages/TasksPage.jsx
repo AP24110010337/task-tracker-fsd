@@ -172,6 +172,35 @@ const TasksPage = () => {
     }
   };
 
+  const handleDeleteTask = async (taskId, taskTitle) => {
+    const shouldDelete = window.confirm(
+      `Delete "${taskTitle}"? This will also remove its tracked time logs.`
+    );
+
+    if (!shouldDelete) {
+      return;
+    }
+
+    try {
+      setActionState({
+        taskId,
+        type: "delete"
+      });
+      setError("");
+      setMessage("");
+      const response = await api.delete(`/tasks/${taskId}`);
+      setTasks((currentTasks) => currentTasks.filter((task) => task._id !== taskId));
+      setMessage(response.data.message || "Task deleted successfully");
+    } catch (requestError) {
+      setError(requestError.response?.data?.message || "Unable to delete task");
+    } finally {
+      setActionState({
+        taskId: "",
+        type: ""
+      });
+    }
+  };
+
   const activeTimerExists = tasks.some((task) => task.isTimerRunning);
 
   return (
@@ -229,6 +258,7 @@ const TasksPage = () => {
               onStartTimer={handleStartTimer}
               onStopTimer={handleStopTimer}
               onCompleteTask={handleCompleteTask}
+              onDelete={handleDeleteTask}
               activeAction={actionState.taskId === task._id ? actionState.type : ""}
               activeTimerExists={activeTimerExists}
             />

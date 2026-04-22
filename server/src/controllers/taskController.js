@@ -111,6 +111,32 @@ export const updateTask = async (req, res, next) => {
   }
 };
 
+export const deleteTask = async (req, res, next) => {
+  try {
+    const task = await Task.findOne({
+      _id: req.params.id,
+      createdBy: req.user._id
+    });
+
+    if (!task) {
+      res.status(404);
+      throw new Error("Task not found");
+    }
+
+    await TimeLog.deleteMany({
+      taskId: task._id,
+      userId: req.user._id
+    });
+    await task.deleteOne();
+
+    res.json({
+      message: "Task deleted successfully"
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const startTaskTimer = async (req, res, next) => {
   try {
     const task = await Task.findOne({

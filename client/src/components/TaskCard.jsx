@@ -18,6 +18,7 @@ const TaskCard = ({
   onStartTimer,
   onStopTimer,
   onCompleteTask,
+  onDelete,
   activeAction = "",
   activeTimerExists = false
 }) => {
@@ -43,6 +44,7 @@ const TaskCard = ({
   const isStarting = activeAction === "start";
   const isStopping = activeAction === "stop";
   const isCompleting = activeAction === "complete";
+  const isDeleting = activeAction === "delete";
   const isActionLoading = Boolean(activeAction);
   const activeTimerStartMs = task.activeTimerStartedAt
     ? new Date(task.activeTimerStartedAt).getTime()
@@ -97,13 +99,25 @@ const TaskCard = ({
               <p className="task-card__description">{task.description}</p>
             </div>
 
-            <button
-              type="button"
-              className="button button--secondary"
-              onClick={() => setIsEditing(true)}
-            >
-              Edit
-            </button>
+            <div className="task-card__header-actions">
+              <button
+                type="button"
+                className="button button--secondary"
+                onClick={() => setIsEditing(true)}
+                disabled={isActionLoading}
+              >
+                Edit
+              </button>
+
+              <button
+                type="button"
+                className="button button--danger"
+                onClick={() => onDelete(task._id, task.title)}
+                disabled={isActionLoading}
+              >
+                {isDeleting ? "Deleting..." : "Delete"}
+              </button>
+            </div>
           </div>
 
           <div className="task-card__details">

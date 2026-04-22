@@ -41,7 +41,7 @@ const AppLayout = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/login");
+    navigate("/", { replace: true });
   };
 
   const navItemClass = ({ isActive }) =>

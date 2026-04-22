@@ -22,6 +22,17 @@
     @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20;
   }
 
+  select.form-input {
+    @apply pr-12;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%231e293b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+  }
+
   .form-input--multiline {
     @apply min-h-28 resize-none;
   }
@@ -191,6 +202,307 @@
     @apply mx-auto max-w-7xl px-5 py-10;
   }
 
+  .landing-page {
+    @apply relative min-h-screen overflow-hidden bg-slate-950 text-white;
+    background-image:
+      radial-gradient(circle at top left, rgba(87, 76, 243, 0.28), transparent 32rem),
+      radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.14), transparent 30rem),
+      linear-gradient(180deg, #050816 0%, #0b1224 55%, #111827 100%);
+  }
+
+  .landing-page__orb {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
+  }
+
+  .landing-page__orb--one {
+    @apply left-[-5rem] top-[-3rem] h-56 w-56 bg-brand/30;
+  }
+
+  .landing-page__orb--two {
+    @apply bottom-12 right-[-4rem] h-64 w-64 bg-emerald-500/20;
+  }
+
+  .landing-page__header {
+    @apply sticky top-0 z-20 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl;
+  }
+
+  .landing-page__header-inner {
+    @apply mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8;
+  }
+
+  .landing-page__brand {
+    @apply text-3xl font-bold tracking-tight text-white;
+  }
+
+  .landing-page__header-actions {
+    @apply flex items-center gap-3;
+  }
+
+  .landing-page__text-link {
+    @apply hidden bg-transparent text-sm font-medium text-white/70 transition hover:text-white md:inline-flex;
+  }
+
+  .landing-page__ghost-button {
+    @apply border-white/15 bg-white/5 text-white hover:bg-white/10;
+  }
+
+  .landing-page__main {
+    @apply relative mx-auto max-w-7xl px-5 pb-20 pt-10 sm:px-6 lg:px-8;
+  }
+
+  .landing-page__hero {
+    @apply grid items-center gap-10 py-10 lg:grid-cols-[1.05fr_0.95fr] lg:py-16;
+  }
+
+  .landing-page__hero-copy {
+    @apply max-w-3xl;
+  }
+
+  .landing-page__eyebrow {
+    @apply inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/70;
+  }
+
+  .landing-page__headline {
+    @apply mt-6 text-5xl font-bold leading-[1.02] text-white md:text-6xl xl:text-7xl;
+  }
+
+  .landing-page__description {
+    @apply mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl;
+  }
+
+  .landing-page__hero-actions {
+    @apply mt-8 flex flex-wrap gap-4;
+  }
+
+  .landing-page__hero-button {
+    @apply min-w-40;
+  }
+
+  .landing-page__metrics {
+    @apply mt-10 grid gap-4 sm:grid-cols-3;
+  }
+
+  .landing-page__metric-card {
+    @apply rounded-3xl border border-white/10 bg-white/5 px-5 py-5 shadow-soft;
+  }
+
+  .landing-page__metric-label {
+    @apply text-sm font-medium uppercase tracking-[0.2em] text-white/45;
+  }
+
+  .landing-page__metric-value {
+    @apply mt-3 text-2xl font-semibold text-white;
+  }
+
+  .landing-page__hero-visual {
+    @apply relative;
+  }
+
+  .landing-page__mockup {
+    @apply rounded-[2rem] border border-white/10 bg-white/10 p-5 shadow-soft backdrop-blur-xl;
+  }
+
+  .landing-page__mockup-top {
+    @apply flex flex-col gap-4 rounded-[1.5rem] border border-white/10 bg-slate-900/65 p-5 md:flex-row md:items-center md:justify-between;
+  }
+
+  .landing-page__mockup-kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-brand-light;
+  }
+
+  .landing-page__mockup-title {
+    @apply mt-3 text-2xl font-semibold text-white;
+  }
+
+  .landing-page__mockup-pill {
+    @apply inline-flex rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200;
+  }
+
+  .landing-page__mockup-stats {
+    @apply mt-5 grid gap-4 md:grid-cols-3;
+  }
+
+  .landing-page__mini-stat {
+    @apply flex items-center gap-4 rounded-[1.5rem] border border-white/10 bg-slate-900/55 px-5 py-5;
+  }
+
+  .landing-page__mini-dot {
+    @apply h-3 w-3 rounded-full;
+  }
+
+  .landing-page__mini-dot--brand {
+    @apply bg-brand;
+  }
+
+  .landing-page__mini-dot--green {
+    @apply bg-emerald-400;
+  }
+
+  .landing-page__mini-dot--amber {
+    @apply bg-amber-400;
+  }
+
+  .landing-page__mini-label {
+    @apply text-sm text-slate-400;
+  }
+
+  .landing-page__mini-value {
+    @apply mt-1 text-2xl font-semibold text-white;
+  }
+
+  .landing-page__mockup-panels {
+    @apply mt-5 grid gap-4;
+  }
+
+  .landing-page__mockup-panel {
+    @apply rounded-[1.5rem] border border-white/10 bg-slate-900/65 p-5;
+  }
+
+  .landing-page__mockup-panel--soft {
+    @apply bg-slate-900/45;
+  }
+
+  .landing-page__mockup-panel-title {
+    @apply text-sm font-semibold uppercase tracking-[0.2em] text-white/55;
+  }
+
+  .landing-page__mockup-task {
+    @apply mt-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between;
+  }
+
+  .landing-page__mockup-task-title {
+    @apply text-xl font-semibold text-white;
+  }
+
+  .landing-page__mockup-task-text {
+    @apply mt-1 text-slate-400;
+  }
+
+  .landing-page__status-badge {
+    @apply inline-flex self-start rounded-full border border-amber-400/25 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200;
+  }
+
+  .landing-page__timeline {
+    @apply mt-4 space-y-3;
+  }
+
+  .landing-page__timeline-row {
+    @apply flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3;
+  }
+
+  .landing-page__timeline-task {
+    @apply text-slate-200;
+  }
+
+  .landing-page__timeline-time {
+    @apply font-semibold text-white;
+  }
+
+  .landing-page__section {
+    @apply py-12 lg:py-16;
+  }
+
+  .landing-page__section-heading {
+    @apply mx-auto max-w-3xl text-center;
+  }
+
+  .landing-page__section-heading--left {
+    @apply mx-0 max-w-none text-left;
+  }
+
+  .landing-page__section-kicker {
+    @apply text-sm font-semibold uppercase tracking-[0.28em] text-brand-light;
+  }
+
+  .landing-page__section-title {
+    @apply mt-4 text-4xl font-bold leading-tight text-white md:text-5xl;
+  }
+
+  .landing-page__section-text {
+    @apply mt-4 text-lg leading-8 text-slate-300;
+  }
+
+  .landing-page__feature-grid {
+    @apply mt-10 grid gap-5 lg:grid-cols-3;
+  }
+
+  .landing-page__feature-card {
+    @apply rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-soft backdrop-blur-md;
+  }
+
+  .landing-page__feature-icon-box {
+    @apply flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-light/15 text-brand-light;
+  }
+
+  .landing-page__feature-icon {
+    @apply h-8 w-8;
+  }
+
+  .landing-page__feature-title {
+    @apply mt-6 text-2xl font-semibold text-white;
+  }
+
+  .landing-page__feature-text {
+    @apply mt-3 text-base leading-7 text-slate-300;
+  }
+
+  .landing-page__workflow {
+    @apply py-4 pb-14 lg:pb-20;
+  }
+
+  .landing-page__workflow-card {
+    @apply rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-soft backdrop-blur-md lg:p-8;
+  }
+
+  .landing-page__workflow-list {
+    @apply mt-10 grid gap-5 lg:grid-cols-3;
+  }
+
+  .landing-page__workflow-item {
+    @apply rounded-[1.75rem] border border-white/10 bg-slate-900/45 p-5;
+  }
+
+  .landing-page__workflow-step {
+    @apply inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-brand-light;
+  }
+
+  .landing-page__workflow-title {
+    @apply mt-5 text-2xl font-semibold text-white;
+  }
+
+  .landing-page__workflow-text {
+    @apply mt-3 text-base leading-7 text-slate-300;
+  }
+
+  .landing-page__cta {
+    @apply rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-brand/25 via-slate-900/70 to-slate-900/85 px-6 py-12 text-center shadow-soft md:px-10;
+  }
+
+  .landing-page__cta-title {
+    @apply mt-4 text-4xl font-bold text-white md:text-5xl;
+  }
+
+  .landing-page__cta-text {
+    @apply mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-300;
+  }
+
+  .landing-page__cta-actions {
+    @apply mt-8 flex flex-wrap items-center justify-center gap-4;
+  }
+
+  .landing-page__reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+
+  .landing-page__reveal--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .stat-card {
     @apply flex items-center gap-5 p-6;
   }
@@ -224,7 +536,7 @@
   }
 
   .stat-card__value {
-    @apply mt-1 text-5xl font-semibold text-slate-900;
+    @apply mt-1 whitespace-nowrap text-4xl font-semibold leading-none tracking-tight text-slate-900 xl:text-5xl;
   }
 
   .dashboard-page {
@@ -307,6 +619,106 @@
   .dashboard-page__table-row {
     @apply grid gap-4 border-t border-slate-200 px-6 py-4 text-slate-700;
     grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .dashboard-page__analytics-grid {
+    @apply grid gap-5;
+  }
+
+  .dashboard-page__charts-grid {
+    @apply mb-5 grid gap-5;
+  }
+
+  .dashboard-page__analytics-card {
+    @apply rounded-2xl border border-slate-200 bg-slate-50 p-6;
+  }
+
+  .dashboard-page__analytics-label {
+    @apply text-sm font-semibold uppercase tracking-[0.18em] text-slate-500;
+  }
+
+  .dashboard-page__analytics-value {
+    @apply mt-4 text-4xl font-semibold text-slate-900;
+  }
+
+  .dashboard-page__analytics-value--text {
+    @apply text-2xl leading-tight;
+  }
+
+  .dashboard-page__analytics-helper {
+    @apply mt-3 text-slate-600;
+  }
+
+  .dashboard-chart {
+    @apply p-6;
+  }
+
+  .dashboard-chart__header {
+    @apply border-b border-slate-200 pb-5;
+  }
+
+  .dashboard-chart__title {
+    @apply text-2xl font-semibold text-slate-900;
+  }
+
+  .dashboard-chart__subtitle {
+    @apply mt-2 text-slate-600;
+  }
+
+  .dashboard-chart__body {
+    @apply mt-6 grid gap-6;
+  }
+
+  .dashboard-chart__visual {
+    @apply relative mx-auto flex h-44 w-44 items-center justify-center;
+  }
+
+  .dashboard-chart__svg {
+    @apply h-44 w-44;
+  }
+
+  .dashboard-chart__center {
+    @apply absolute inset-0 flex flex-col items-center justify-center text-center;
+  }
+
+  .dashboard-chart__center-value {
+    @apply text-4xl font-semibold text-slate-900;
+  }
+
+  .dashboard-chart__center-label {
+    @apply mt-1 text-sm uppercase tracking-[0.18em] text-slate-500;
+  }
+
+  .dashboard-chart__legend {
+    @apply space-y-3;
+  }
+
+  .dashboard-chart__legend-item {
+    @apply flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3;
+  }
+
+  .dashboard-chart__legend-main {
+    @apply flex items-center gap-3;
+  }
+
+  .dashboard-chart__legend-dot {
+    @apply h-3 w-3 rounded-full;
+  }
+
+  .dashboard-chart__legend-label {
+    @apply font-medium text-slate-700;
+  }
+
+  .dashboard-chart__legend-values {
+    @apply flex items-center gap-3 text-sm text-slate-500;
+  }
+
+  .dashboard-chart__legend-count {
+    @apply font-semibold text-slate-900;
+  }
+
+  .dashboard-chart__legend-percent {
+    @apply min-w-10 text-right;
   }
 
   .tasks-page {
@@ -440,6 +852,14 @@
   }
 
   @media (min-width: 768px) {
+    .landing-page__header-actions {
+      @apply gap-4;
+    }
+
+    .landing-page__text-link {
+      @apply inline-flex;
+    }
+
     .app-shell__nav--desktop {
       @apply flex;
     }
@@ -449,6 +869,14 @@
     }
 
     .dashboard-page__stats-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-page__charts-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-page__analytics-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -474,6 +902,10 @@
   }
 
   @media (min-width: 1024px) {
+    .landing-page__mockup-panels {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
     .auth-page__card {
       grid-template-columns: 1.1fr 0.9fr;
     }
@@ -499,5 +931,15 @@
     .dashboard-page__stats-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+
+    .dashboard-page__analytics-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .button--danger {
+    @apply bg-rose-600 text-white hover:bg-rose-700;
+  }
+  .task-card__header-actions {
+    @apply flex flex-wrap gap-3;
   }
 }
